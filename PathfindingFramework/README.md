@@ -74,7 +74,7 @@ Muitos jogos usam mapas baseados em tiles (grids). Um grid é, matematicamente, 
 
 No `GridManager`, representamos esse espaço visualmente usando a função `_draw()` nativa da Godot, iterando sobre as coordenadas `Vector2i` (coluna e linha). Os obstáculos são guardados em um Dicionário (`walls`), o que garante uma consulta extremamente rápida de colisões.
 
-> **[🖼️ INSERIR AQUI: Print do grid na engine com uma parede, o ponto inicial vermelho e o X azul do objetivo]**
+![alt text](img/grid.png)
 
 ### O Ciclo de Animação:
 O diferencial deste script é o uso de Corrotinas (`await`). Ao invés de exibir a solução instantaneamente, o `GridManager` pede ao algoritmo de busca que faça pequenas pausas a cada nó processado:
