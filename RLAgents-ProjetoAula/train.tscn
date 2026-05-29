@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b62pvytlfjhc4"]
+
+[ext_resource type="PackedScene" uid="uid://bl1jvuhhjuhlc" path="res://game.tscn" id="2_6t3td"]
+[ext_resource type="Script" uid="uid://cjor2gitodjc2" path="res://addons/godot_rl_agents/sync.gd" id="2_lomod"]
+
+[node name="Train" type="Node3D" unique_id=1691050742]
+
+[node name="Game" parent="." unique_id=664821135 instance=ExtResource("2_6t3td")]
+
+[node name="Game2" parent="." unique_id=1118792369 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
+
+[node name="Game3" parent="." unique_id=827977441 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+
+[node name="Game4" parent="." unique_id=1793258809 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 11)
+
+[node name="Game5" parent="." unique_id=443653703 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22)
+
+[node name="Game6" parent="." unique_id=980164559 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -22)
+
+[node name="Game7" parent="." unique_id=1665882615 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+
+[node name="Game8" parent="." unique_id=746427968 instance=ExtResource("2_6t3td")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -11)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1198141351]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.6, 29.9374, -4.69021)
+current = true
+
+[node name="Sync" type="Node" parent="." unique_id=1231942418]
+script = ExtResource("2_lomod")
+control_mode = 2
+onnx_model_path = "C:\\Users\\fello\\Documents\\ProjetosGodot\\RingPong-ringpong_starter_aula\\modelao.onnx"
+metadata/_custom_type_script = "uid://cjor2gitodjc2"

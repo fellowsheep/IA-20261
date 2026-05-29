@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dvcu775n18kyr"]
+
+[ext_resource type="Script" uid="uid://bywxvinmn87v2" path="res://Player.gd" id="1_wnmni"]
+[ext_resource type="Script" uid="uid://chrfrxo31djg7" path="res://controller.gd" id="2_onrkg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f8u8m"]
+size = Vector3(2, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t8373"]
+size = Vector3(2, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_icghh"]
+size = Vector3(2.1, 0.15, 0.15)
+
+[node name="Player" type="Node3D" unique_id=2025585471]
+script = ExtResource("1_wnmni")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=208023552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
+mesh = SubResource("BoxMesh_f8u8m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1632213372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=100220172]
+shape = SubResource("BoxShape3D_t8373")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1776385958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=415864783]
+shape = SubResource("BoxShape3D_icghh")
+
+[node name="AIController3D" type="Node3D" parent="." unique_id=269098454]
+script = ExtResource("2_onrkg")
+metadata/_custom_type_script = "uid://cvq2atunypal5"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
